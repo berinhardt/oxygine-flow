@@ -12,5 +12,5 @@ add_library(oxygine-flow STATIC
 	src/flow/Transition.cpp 
 	src/flow/Transition.h
 )
-
+target_link_libraries(oxygine-flow PUBLIC oxygine-framework)
 set(OXYGINE_FLOW_INCLUDE_DIRS ${OXYGINE_FLOW_INCLUDE_DIRS} PARENT_SCOPE)
