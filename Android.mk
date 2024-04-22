@@ -7,7 +7,7 @@ LOCAL_MODULE_FILENAME := liboxygine-flow
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../oxygine-framework/oxygine/src/ \
 					$(LOCAL_PATH)/../SDL/include \
-
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../glm/
 
 LOCAL_SRC_FILES :=  src/flow/flow.cpp \
 					src/flow/Transition.cpp \
