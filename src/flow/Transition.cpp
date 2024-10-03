@@ -229,9 +229,10 @@ void TransitionQuads::update(const UpdateState& us) {
    // r.Renderer::begin(0);
 
    {
+      RenderState krs;
       _holder->setPosition(Vector2(0, 0));
       _holder->setVisible(true);
-      _holder->render(rs);
+      _holder->render(rs, krs);
       // rs.material->render(_holder.get(), rs);
       _holder->setPosition(getStage()->parent2local(Vector2(0, 0)));
       //_holder->setVisible(false);
