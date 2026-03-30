@@ -25,7 +25,7 @@ namespace oxygine
         {
             back = true;
         }
-#elif EMSCRIPTEN
+#elif __EMSCRIPTEN__
 
 #else
         const Uint8* data = SDL_GetKeyboardState(0);
