@@ -3,7 +3,6 @@ project (OXYGINE_FLOW)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(OXYGINE_FLOW_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/src)
 add_library(oxygine-flow STATIC 
 	src/flow/Scene.cpp 
 	src/flow/Scene.h
@@ -13,4 +12,4 @@ add_library(oxygine-flow STATIC
 	src/flow/Transition.h
 )
 target_link_libraries(oxygine-flow PUBLIC oxygine-framework)
-set(OXYGINE_FLOW_INCLUDE_DIRS ${OXYGINE_FLOW_INCLUDE_DIRS} PARENT_SCOPE)
+target_include_directories(oxygine-flow PUBLIC src)
