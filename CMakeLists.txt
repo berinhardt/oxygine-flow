@@ -7,12 +7,16 @@ if (NOT ANDROID)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 endif()
 
+# Android.mk hands the compiler its sources in the order LOCAL_SRC_FILES lists
+# them, the archiver keeps that member order, and the final link layout follows
+# it, so the .cpp entries below follow Android.mk's sequence (flow.cpp,
+# Transition.cpp, Scene.cpp) rather than a folder-by-folder one.
 add_library(oxygine-flow STATIC 
-	src/flow/Scene.cpp 
-	src/flow/Scene.h
 	src/flow/flow.cpp 
-	src/flow/flow.h
+	src/flow/Scene.h
 	src/flow/Transition.cpp 
+	src/flow/flow.h
+	src/flow/Scene.cpp 
 	src/flow/Transition.h
 )
 target_link_libraries(oxygine-flow PUBLIC oxygine-framework)
